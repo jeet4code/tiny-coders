@@ -1,6 +1,6 @@
 <ng-container *ngIf="!showReport else reportView">
   <div class="scan-page">
-    <div class="camera">
+    <div class="camera" >
       <div class="camera-screen-wrapper">
         <div class="camera-screen scan" [class.scan]="scanning === true">
           <video [class.hidden]="imageCaptured" class="video" #video autoplay></video>

@@ -11,6 +11,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { FoodDietComponent } from './pages/food-diet/food-diet.component';
 import { OrganicTipsComponent } from './pages/organic-tips/organic-tips.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

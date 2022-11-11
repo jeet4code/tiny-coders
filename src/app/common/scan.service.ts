@@ -11,9 +11,7 @@ export class ScanService {
 
   scan(imageData: string) {
     return this.http.post('http://localhost:3000/scan', {
-      file: imageData
-    }).pipe(tap(data => {
-      //this.products = data;
-    }));
+      file: imageData,
+    });
   }
 }

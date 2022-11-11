@@ -18,12 +18,12 @@ import { ScanService } from '../scan.service';
 export class ImageCaptureComponent implements AfterViewInit, OnDestroy {
   @ViewChild('video') video?: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvas?: ElementRef<HTMLCanvasElement>;
-   imageData?: string;
+  imageData?: string;
   videoStream?: MediaStream;
   scanning = false;
   imageCaptured = false;
   uploadedImage?: any;
-  @Input() showReport = true;
+  @Input() showReport = false;
 
   constructor(private scanner:ScanService){}
 
