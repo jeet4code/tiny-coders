@@ -237,4 +237,28 @@ $scanner-color: #fab17e;
       }
     }
   }
+
+  .treatement-details {
+    .facial-mask {
+
+      .facial-mask-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 30px auto 30px;
+        align-items: center;
+        .facial-mask-left{
+          width: 50%;
+          p span {
+            font-weight: 800;
+          }
+        }
+        .facial-mask-right {
+          margin-left: -70px;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
 }
