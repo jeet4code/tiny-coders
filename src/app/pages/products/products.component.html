@@ -1,1 +1,27 @@
-<p>products works!</p>
+<div class="product-container">
+    <div *ngIf="showLabel">
+        <span>Product</span>
+    </div>
+    <div class="product-list" *ngFor="let item of items">
+        <img src="{{item.product_url}}"
+         alt="{{item.product_name}}">
+         <div class="product-details">
+            <div class="rating">
+                <span *ngFor="let _ of [].constructor(item.product_rating)">
+                    <img src="../../../assets/star_filled.png" alt="-">
+                </span>
+                <span *ngFor="let _ of [].constructor(5-item.product_rating)">
+                    <img src="../../../assets/star_default.png" alt="-">
+                </span>
+                ({{item.product_rating_count}} users)
+            </div>
+            <div class="product-benefits">
+                <span>Benefits:</span>
+                {{item.product_benefits}}
+            </div>
+            <a href="{{item.product_redirect_url}}" class="btn" target="_blank">
+                Buy Now
+            </a>
+         </div>
+    </div>
+</div>

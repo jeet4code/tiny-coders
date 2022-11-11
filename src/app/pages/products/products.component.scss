@@ -1,0 +1,61 @@
+.product-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .show-label {
+        display: flex;
+    }
+
+    .product-list {
+        height: 230px;
+        width: 200px;
+        margin: 30px 10px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        img {
+            height: 180px;
+            width: 180px;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .rating {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                font-size: 10px;
+                font-family: 'Poppins', sans-serif;
+                width: 100%;
+                
+                span img {
+                    height: 10px;
+                    width: 10px;
+                }
+            }
+
+            .product-benefits {
+                font-family: 'Poppins', sans-serif;
+                span {
+                    font-weight: 500;
+                }
+            }
+            .btn {
+                width: 75px;
+                height: 30px;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+
+        }
+
+    }
+
+}
