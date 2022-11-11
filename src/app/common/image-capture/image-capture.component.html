@@ -1,25 +1,127 @@
-<div class="scan-page">
-  <div class="camera">
-    <div class="camera-screen-wrapper">
-      <div class="camera-screen scan" [class.scan]="scanning === true">
-        <video [class.hidden]="imageCaptured" class="video" #video autoplay></video>
-        <canvas [class.hidden]="!imageCaptured" class="canvas" #canvas></canvas>
-        <img *ngIf="uploadedImage" class="image" [src]="uploadedImage"/>
+<ng-container *ngIf="!showReport else reportView">
+  <div class="scan-page">
+    <div class="camera">
+      <div class="camera-screen-wrapper">
+        <div class="camera-screen scan" [class.scan]="scanning === true">
+          <video [class.hidden]="imageCaptured" class="video" #video autoplay></video>
+          <canvas [class.hidden]="!imageCaptured" class="canvas" #canvas></canvas>
+          <img *ngIf="uploadedImage" class="image" [src]="uploadedImage"/>
+        </div>
+      </div>
+      <div class="camera-btn-container">
+        <button class="capture-btn" [class.reset]="imageCaptured" (click)="takeImage();imageInput.value=''"></button>
       </div>
     </div>
-    <div class="camera-btn-container">
-      <button class="capture-btn" [class.reset]="imageCaptured" (click)="takeImage();imageInput.value=''"></button>
+    <div class="divider">&nbsp;</div>
+    <div class="upload-section">
+      <input #imageInput
+           type="file"
+           accept="image/*"
+           (change)="processFile(imageInput)" style="display: none;" >
+      <div class="upload"><img class="upload-img" (click)="imageInput.click()" src="../../../../assets/upload.svg" /></div>
+      <div class="submit-btn-container">
+        <a class="btn submit-btn" (click)="uploadImage()">Submit</a>
+      </div>
     </div>
+  </div>  
+</ng-container>
+
+<ng-template #reportView>
+  <section class="report-title">
+    <div class="label">Face Analysis Report</div>
+  </section>
+  <div class="report-container">
+      <section class="report-data">
+        <div class="report-issues">
+          <div class="issues-title">
+            <div class="label">Issues</div>
+          </div>
+          <div class="issues-tagline">
+            <span>Following issues are founds on your skin.</span>
+          </div>
+          <div class="issues-list">
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+          </div>
+        </div>
+        <div class="report-image">
+          <img [src]="imageData" alt="scanned_image">
+        </div>
+        <div class="report-issues">
+          <div class="issues-title">
+            <div class="label">Treatment</div>
+          </div>
+          <div class="issues-tagline">
+            <span>You can follow below treatments and make <br> your skin glow. Click to know each in details.</span>
+          </div>
+          <div class="issues-list">
+            <a class="issues-img" href="/scan#product">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Products</span>
+            </a>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+            <div class="issues-img">
+              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <span>Acne</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="treatement-details">
+        <!-- Product-->
+        <app-products [showLabel]="true" id="product"></app-products>
+        <app-food-diet [showLabel]="true"></app-food-diet>
+        <app-organic-tips [showLabel]="true"></app-organic-tips>
+        <!-- Medicines-->
+        <app-products [showLabel]="true" [title]="'Medicines'"></app-products>
+        <section class="facial-mask">
+          <div class="label">Facial Mask</div>
+          <div class="facial-mask-container">
+            <div class="facial-mask-left">
+
+            </div>
+            <div class="facial-mask-right">
+              
+            </div>  
+          </div>
+        </section>
+      </section>
   </div>
-  <div class="divider"></div>
-  <div class="upload-section">
-    <input #imageInput
-         type="file"
-         accept="image/*"
-         (change)="processFile(imageInput)" style="display: none;" >
-    <div class="upload"><img (click)="imageInput.click()" src="../../../../assets/upload.svg" /></div>
-    <div class="submit-btn-container">
-      <button class="submit-btn" (click)="uploadImage()">Submit</button>
-    </div>
-  </div>
-</div>
+</ng-template>
