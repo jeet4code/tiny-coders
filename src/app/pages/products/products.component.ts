@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-showLabel= false;
-items= [{
+  @Input() showLabel= false;
+  @Input() items= [{
   product_name: 'Lakme',
   product_url: 'https://cdn.shopify.com/s/files/1/0014/3514/0183/products/23414_H_8901030907487_600x.jpg',
   product_benefits: 'Glows skin',

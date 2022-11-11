@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-organic-tips',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./organic-tips.component.scss']
 })
 export class OrganicTipsComponent implements OnInit {
-  showLabel= false;
-  items= [{
+  @Input() showLabel= false;
+  @Input() items= [{
     product_name: 'Chia Seeds',
     product_url: 'https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/src/chia.png',
     product_description:'Chia seeds are not just healthy to eat. They are rich in antioxidants and omega-3 fatty acids that do wonders to you skin. It hydrates and helps soothe inflammation while tackling the signs of ageing. Mix some soaked chia seeds with cucumber paste and apply it to your face and neck. Leave on for 20 minutes and rinse it off with water. Once again, massage it while you do so that it exfoliates your skin. This is too one of the most important tips for glowing skin.',
