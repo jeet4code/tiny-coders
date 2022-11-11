@@ -7,6 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
   @Input() showLabel= false;
+  @Input() title = 'Products';
   @Input() items= [{
   product_name: 'Lakme',
   product_url: 'https://cdn.shopify.com/s/files/1/0014/3514/0183/products/23414_H_8901030907487_600x.jpg',

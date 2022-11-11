@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   ViewChild,
   OnDestroy,
+  Input,
 } from '@angular/core';
 
 @Component({
@@ -14,11 +15,12 @@ import {
 export class ImageCaptureComponent implements AfterViewInit, OnDestroy {
   @ViewChild('video') video?: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvas?: ElementRef<HTMLCanvasElement>;
-  private imageData?: string;
+   imageData?: string;
   videoStream?: MediaStream;
   scanning = false;
   imageCaptured = false;
   uploadedImage?: any;
+  @Input() showReport = false;
 
   ngAfterViewInit() {
     this.startCamera();
@@ -90,9 +92,12 @@ export class ImageCaptureComponent implements AfterViewInit, OnDestroy {
   }
 
   uploadImage() {
-    console.log(this.imageData);
     this.scanning = true;
-    //this.scanning = true;
+    setTimeout(()=>{
+      console.log(this.imageData);
+      this.scanning=false;
+      this.showReport= true;
+    },2000);
   }
 
   ngOnDestroy(): void {

@@ -1,7 +1,5 @@
+<div class="label" *ngIf="showLabel">{{title}}</div>
 <div class="product-container">
-    <div *ngIf="showLabel">
-        <span>Product</span>
-    </div>
     <div class="product-list" *ngFor="let item of items">
         <img src="{{item.product_url}}"
          alt="{{item.product_name}}">
