@@ -40,8 +40,10 @@
     align-items: center;
   }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
 
 .btn {
   background-color: #EE8062;
