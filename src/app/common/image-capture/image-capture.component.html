@@ -2,19 +2,24 @@
   <div class="camera">
     <div class="camera-screen-wrapper">
       <div class="camera-screen scan" [class.scan]="scanning === true">
-        <video [class.hidden]="scanning" class="video" #video autoplay></video>
-        <canvas [class.hidden]="!scanning" class="canvas" #canvas></canvas>
+        <video [class.hidden]="imageCaptured" class="video" #video autoplay></video>
+        <canvas [class.hidden]="!imageCaptured" class="canvas" #canvas></canvas>
+        <img *ngIf="uploadedImage" class="image" [src]="uploadedImage"/>
       </div>
     </div>
     <div class="camera-btn-container">
-      <button class="capture-btn" [class.reset]="scanning" (click)="takeImage()"></button>
+      <button class="capture-btn" [class.reset]="imageCaptured" (click)="takeImage();imageInput.value=''"></button>
     </div>
   </div>
   <div class="divider"></div>
   <div class="upload-section">
-    <div class="upload"><img src="../../../../assets/upload.svg" /></div>
+    <input #imageInput
+         type="file"
+         accept="image/*"
+         (change)="processFile(imageInput)" style="display: none;" >
+    <div class="upload"><img (click)="imageInput.click()" src="../../../../assets/upload.svg" /></div>
     <div class="submit-btn-container">
-      <button class="submit-btn">Submit</button>
+      <button class="submit-btn" (click)="uploadImage()">Submit</button>
     </div>
   </div>
 </div>
