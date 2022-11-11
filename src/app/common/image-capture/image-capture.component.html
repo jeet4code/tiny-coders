@@ -11,15 +11,15 @@
       <button class="capture-btn" [class.reset]="imageCaptured" (click)="takeImage();imageInput.value=''"></button>
     </div>
   </div>
-  <div class="divider"></div>
+  <div class="divider">&nbsp;</div>
   <div class="upload-section">
     <input #imageInput
          type="file"
          accept="image/*"
          (change)="processFile(imageInput)" style="display: none;" >
-    <div class="upload"><img (click)="imageInput.click()" src="../../../../assets/upload.svg" /></div>
+    <div class="upload"><img class="upload-img" (click)="imageInput.click()" src="../../../../assets/upload.svg" /></div>
     <div class="submit-btn-container">
-      <button class="submit-btn" (click)="uploadImage()">Submit</button>
+      <a class="btn submit-btn" (click)="uploadImage()">Submit</a>
     </div>
   </div>
 </div>

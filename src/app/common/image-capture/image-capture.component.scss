@@ -9,9 +9,9 @@ $scanner-color: #fab17e;
 .scan::after {
   content: "";
   position: absolute;
-  width: 100%;
-  top: 0;
-  height: 100%;
+  width: 34vw;
+  top: 180px;
+  height: 54vh;
   background-image: linear-gradient(
     to bottom,
     rgba($scanner-color, 70%),
@@ -33,7 +33,11 @@ $scanner-color: #fab17e;
 .scan-page {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
+  width: 550px;
+  margin-left: 54px;
 }
 
 .camera {
@@ -42,13 +46,21 @@ $scanner-color: #fab17e;
   border-radius: 15px;
   box-shadow: 0px 0px 5px black;
   background-color: $gray;
+  height: 64vh;
+  margin-top: 13px;
+  gap: 0;
+  display: flex;
+  align-items: center;
+
   .camera-screen-wrapper {
-    width: 100%;
+    margin-left: 34px;
+    width: 34vw;
+    height: 53vh;
     box-shadow: inset 0px 0px 4px darken($gray, 20%);
     padding: 4px;
   }
   .camera-screen {
-    position: relative;
+    // position: relative;
     overflow: hidden;
   }
 }
@@ -62,18 +74,20 @@ $scanner-color: #fab17e;
 .video,
 .image,
 .canvas {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 178px;
+  left: 134px;
+  width: 34vw;
+  height: 320px;
   position: absolute;
 }
 
 .scan-page {
-  margin-left: 10px;
+  margin-left: 92px;
+  margin-top: 36px;
 }
 
 .camera-btn-container {
+  width: 74px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -87,8 +101,10 @@ $scanner-color: #fab17e;
   background-color: black;
   border: 4px solid #f9f9f9;
   cursor:pointer;
-}
+  margin-right: 4px;
 
+ 
+}
 .capture-btn.reset {
     background-color: rgb(190, 65, 65);
 }
@@ -98,22 +114,24 @@ $scanner-color: #fab17e;
 }
 
 .submit-btn {
-  padding: 5px 20px;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0em;
-  text-align: center;
-  background-color: #ee8062;
-  color: white;
-  border-radius: 100px;
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
+.submit-btn-container {
+  margin-top: 30px;
+}
 .upload-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  margin-left: 40px;
+}
+
+.upload-img:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -125,46 +143,27 @@ $scanner-color: #fab17e;
   .camera {
     padding: 15px;
   }
-
-  .submit-btn {
-    font-size: 22px;
-  }
-
-  .upload-section {
-    width: 150px;
-  }
 }
 
 @media screen and (min-width: 1024px) {
   .scan-page {
     gap: 70px;
   }
-  .camera-btn-container {
-    width: 148px;
-    margin-left: 10px;
-  }
 
   .capture-btn {
-    width: 96px;
-    height: 96px;
+    width: 70px;
+    height: 70px;
   }
 
   .camera {
-    padding: 36px;
-    gap: 30px;
+    padding: 4px;
   }
 
   .divider {
     width: 5px;
-    margin: 40px 0;
+    height: 300px;
+    margin: 40px 0 40px 40px;
     background-color: #ee8062;
-  }
-
-  .upload-section {
-    width: 200px;
-  }
-
-  .submit-btn {
-    font-size: 30px;
+    min-height: 0;
   }
 }
