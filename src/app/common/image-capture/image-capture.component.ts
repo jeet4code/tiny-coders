@@ -6,6 +6,9 @@ import {
   OnDestroy,
   Input,
 } from '@angular/core';
+import { finalize } from 'rxjs';
+import {take} from "rxjs/operators";
+import { ScanService } from '../scan.service';
 
 @Component({
   selector: 'image-capture',
@@ -21,6 +24,8 @@ export class ImageCaptureComponent implements AfterViewInit, OnDestroy {
   imageCaptured = false;
   uploadedImage?: any;
   @Input() showReport = false;
+
+  constructor(private scanner:ScanService){}
 
   ngAfterViewInit() {
     this.startCamera();
@@ -93,11 +98,10 @@ export class ImageCaptureComponent implements AfterViewInit, OnDestroy {
 
   uploadImage() {
     this.scanning = true;
-    setTimeout(()=>{
-      console.log(this.imageData);
+    this.scanner.scan(this.imageData!).pipe(take(1), finalize(() => {
       this.scanning=false;
       this.showReport= true;
-    },2000);
+    })).subscribe(console.log,console.log);
   }
 
   ngOnDestroy(): void {
