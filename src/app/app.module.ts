@@ -8,6 +8,8 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ImageCaptureComponent } from './common/image-capture/image-capture.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './common/header/header.component';
+import { FoodDietComponent } from './pages/food-diet/food-diet.component';
+import { OrganicTipsComponent } from './pages/organic-tips/organic-tips.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HeaderComponent } from './common/header/header.component';
     ProductsComponent,
     ImageCaptureComponent,
     LandingComponent,
-    HeaderComponent
+    HeaderComponent,
+    FoodDietComponent,
+    OrganicTipsComponent
   ],
   imports: [
     BrowserModule,
