@@ -7,6 +7,7 @@ import { ScanComponent } from './pages/scan/scan.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ImageCaptureComponent } from './common/image-capture/image-capture.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { HeaderComponent } from './common/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LandingComponent } from './pages/landing/landing.component';
     ScanComponent,
     ProductsComponent,
     ImageCaptureComponent,
-    LandingComponent
+    LandingComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
