@@ -10,6 +10,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FoodDietComponent } from './pages/food-diet/food-diet.component';
 import { OrganicTipsComponent } from './pages/organic-tips/organic-tips.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrganicTipsComponent } from './pages/organic-tips/organic-tips.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
