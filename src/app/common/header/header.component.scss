@@ -2,9 +2,16 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: rgb(225, 118, 118);
+    justify-content: center;
     color: white;
     font-weight: 600;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    .nav-div {
+      display: flex;
+    align-items: center;
+    width: 90%;
+    }
   }
 
   .toolbar .logo {
@@ -41,5 +48,9 @@
   nav ul {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+
+    li a{
+      color: #000;
+    }
   }
