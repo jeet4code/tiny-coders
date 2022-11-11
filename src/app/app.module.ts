@@ -12,6 +12,7 @@ import { FoodDietComponent } from './pages/food-diet/food-diet.component';
 import { OrganicTipsComponent } from './pages/organic-tips/organic-tips.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from  '@angular/common/http';
+import { ProfileComponent } from './common/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from  '@angular/common/http';
     LandingComponent,
     HeaderComponent,
     FoodDietComponent,
-    OrganicTipsComponent
+    OrganicTipsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
