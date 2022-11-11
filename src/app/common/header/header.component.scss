@@ -6,10 +6,17 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: rgb(225, 118, 118);
     color: white;
     font-weight: 600;
   }
+
+  .toolbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+  }
+
 
   .toolbar img {
     margin: 0 16px;
@@ -32,4 +39,11 @@
   
   .spacer {
     flex: 1;
+  }
+
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
