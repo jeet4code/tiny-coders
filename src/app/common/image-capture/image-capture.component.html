@@ -78,41 +78,52 @@
           </div>
           <div class="issues-list">
             <a class="issues-img" href="/scan#product">
-              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
+              <img src="../../../assets/products.png" alt="product">
               <span>Products</span>
             </a>
-            <div class="issues-img">
-              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
-              <span>Acne</span>
-            </div>
-            <div class="issues-img">
-              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
-              <span>Acne</span>
-            </div>
-            <div class="issues-img">
-              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
-              <span>Acne</span>
-            </div>
-            <div class="issues-img">
-              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
-              <span>Acne</span>
-            </div>
-            <div class="issues-img">
-              <img src="https://raw.githubusercontent.com/Abhishek0402/Recipe_App/master/acnes.png" alt="acnes">
-              <span>Acne</span>
-            </div>
+            <a class="issues-img"  href="/scan#foodDiet">
+              <img src="../../../assets/food.png" alt="food">
+              <span>Food Diet</span>
+            </a>
+            <a class="issues-img" href="/scan#organicTips">
+              <img src="../../../assets/organic.png" alt="organic">
+              <span>Organic Tips</span>
+            </a>
+            <a class="issues-img" href="/scan#medicines">
+              <img src="../../../assets/medi.png" alt="Medicines">
+              <span>Medicines</span>
+            </a>
+            <a class="issues-img" href="/scan#facial">
+              <img src="../../../assets/facial.png" alt="facial">
+              <span>Facial Mask</span>
+            </a>
+            <a class="issues-img" href="/scan#cleansing">
+              <img src="../../../assets/cleansing.png" alt="Cleansing">
+              <span>Cleansing</span>
+            </a>
           </div>
         </div>
       </section>
       <section class="treatement-details">
         <!-- Product-->
         <app-products [showLabel]="true" id="product"></app-products>
-        <app-food-diet [showLabel]="true"></app-food-diet>
-        <app-organic-tips [showLabel]="true"></app-organic-tips>
+        <app-food-diet [showLabel]="true" id="foodDiet"></app-food-diet>
+        <app-organic-tips [showLabel]="true" id="organicTips"></app-organic-tips>
         <!-- Medicines-->
-        <app-products [showLabel]="true" [title]="'Medicines'"></app-products>
-        <section class="facial-mask">
+        <app-products [showLabel]="true" [title]="'Medicines'" id="medicines"></app-products>
+        <section class="facial-mask" id="facial">
           <div class="label">Facial Mask</div>
+          <div class="facial-mask-container">
+            <div class="facial-mask-left">
+
+            </div>
+            <div class="facial-mask-right">
+              
+            </div>  
+          </div>
+        </section>
+        <section class="facial-mask" id="cleansing">
+          <div class="label">Cleansing</div>
           <div class="facial-mask-container">
             <div class="facial-mask-left">
 

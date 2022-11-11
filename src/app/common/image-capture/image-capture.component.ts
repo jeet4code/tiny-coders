@@ -23,7 +23,7 @@ export class ImageCaptureComponent implements AfterViewInit, OnDestroy {
   scanning = false;
   imageCaptured = false;
   uploadedImage?: any;
-  @Input() showReport = false;
+  @Input() showReport = true;
 
   constructor(private scanner:ScanService){}
 

@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'organic-tips',
     component: OrganicTipsComponent,
   },
+  {
+    path: 'profile',
+    component: OrganicTipsComponent,
+  },
 ];
 
 @NgModule({
