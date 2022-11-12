@@ -1,0 +1,16 @@
+ <div class="login-container">
+     <div class="login-content">
+       <mat-toolbar class="login-toolbar label" color="primary">Feedback</mat-toolbar>
+       <mat-card class="card-container">
+         <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
+           <mat-form-field>
+             <mat-icon matPrefix>person_outline</mat-icon>
+             <input autofocus type="text" matInput placeholder="Comment" formControlName="comment">
+           </mat-form-field>
+           <a href="" class="btn">
+            Submit
+        </a>
+         </form>
+       </mat-card>
+     </div>
+   </div>

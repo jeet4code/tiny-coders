@@ -6,6 +6,7 @@ import { OrganicTipsComponent } from './pages/organic-tips/organic-tips.componen
 import { ProductsComponent } from './pages/products/products.component';
 import { ScanComponent } from './pages/scan/scan.component';
 import {ProfileComponent} from './common/profile/profile.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: LandingComponent,},
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent,
   },
 ];
 
